@@ -1,5 +1,22 @@
-.counter {
+body {
+  margin: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.clock {
   font-size: 36px;
   text-align: center;
-  margin-top: 36px;
+  margin: 36px;
+}
+
+.counterFrom {
+  font-size: 36px;
+  text-align: center;
+  margin: auto;
 }
