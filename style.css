@@ -12,11 +12,16 @@ body {
 .clock {
   font-size: 36px;
   text-align: center;
-  margin: 36px;
+  margin-top: 36px;
 }
 
 .counterFrom {
   font-size: 36px;
   text-align: center;
-  margin: auto;
+  margin-top: 36px;
+}
+.counterTo {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 36px;
 }
