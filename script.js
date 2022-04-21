@@ -1,41 +1,9 @@
-// Указываем дату события, для которого нужно рассчитать прошедшее время
-let appointedDate = new Date(1977, 0, 15)
-// Текущая дата
-let today = new Date()
 // Первый день текущего года
 let startOfCurrentYear = new Date(new Date().getFullYear(), 0, 1)
 // Получаем таймстамп текущего времени (количество миллисекунд, прошедших с 1 января 1970 года)
 let now = Date.now()
 
-/* let year = new Date().getFullYear()
-// К номеру прибавляем 1, т.к. нумерация месяцев начинается с 0
-let month = new Date().getMonth() + 1
-// Название месяца из его номера
-let monthName = new Date().toLocaleString('ru', { month: 'long' })
-let date = new Date().getDate() */
 
-// Отображение текущего времени каждую секунду
-function clock() {
-  let hour = new Date().getHours()
-  let minute = new Date().getMinutes()
-  let second = new Date().getSeconds()
-
-  // Добавляем ведущие нули для однозначных чисел
-  hour < 10 ? (hour = '0' + hour) : hour
-  minute < 10 ? (minute = '0' + minute) : minute
-  second < 10 ? (second = '0' + second) : second
-
-  // Находим класс clock
-  let currentTime = document.querySelector('.clock')
-
-  // Добавляем текстовое содержимое
-  currentTime.textContent = 'Время: ' + hour + ' : ' + minute + ' : ' + second
-
-  // Вызываем функцию () через 1 секунду и получаем тикающие часы
-  setTimeout(clock, 1000)
-}
-
-clock()
 
 // Расчет количества дней, прошедших с начала года
 function daysPassed(now, startOfCurrentYear) {
@@ -43,9 +11,13 @@ function daysPassed(now, startOfCurrentYear) {
   return Math.floor((now - startOfCurrentYear) / 86400000)
 }
 
-// Отображение времени, прошедшего от указанной даты
+let dateFrom = prompt('Укажите важную дату:', '')
+
+// Отображение времени, прошедшего с указанной даты
 function timeFromEvent() {
-  let appointedDate = new Date(1977, 0, 15)
+  
+  let appointedDate = new Date(dateFrom)
+  // let appointedDate = new Date(1977, 0, 15)
   let now = Date.now()
 
   // Находим разницу между датами в миллисекундах
@@ -79,7 +51,7 @@ function timeFromEvent() {
 
 timeFromEvent()
 
-function counterTo() {
+/* function counterTo() {
   let appointedDate = new Date(2023, 0, 15)
   let now = Date.now()
 
@@ -107,3 +79,4 @@ function counterTo() {
 }
 
 counterTo()
+ */

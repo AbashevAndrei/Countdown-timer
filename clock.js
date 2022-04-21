@@ -1,4 +1,4 @@
-// Добавим в начало блока с классом container Dom-узел
+// Добавим в начало блока с классом container Dom-узел, в котором будут отображаться часы
 let divContainer = document.querySelector('.container')
 let currentTime = document.createElement('div')
 currentTime.classList.add('clock')
