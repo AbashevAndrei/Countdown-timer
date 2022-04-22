@@ -2,13 +2,14 @@ let divCounterTo = document.createElement('div')
 divCounterTo.classList.add('counterTo')
 divContainer.append(divCounterTo)
 
-let dateTo = prompt('Укажите дату события (в формате гггг.м.д.):', '')
+let dateTo = prompt('Укажите дату события (в формате гггг-м-д час:мин):', '')
 
 function counterTo() {
-  let appointedDate = new Date(dateTo)
+  let appointedDate = Date.parse(dateTo)
   let now = Date.now()
 
   let timeDifferenceInMilliseconds = appointedDate - now
+
   let displaySeconds = Math.floor((timeDifferenceInMilliseconds / 1000) % 60)
   // Количество минут (неполный час)
   let displayMinutes = Math.floor(
@@ -27,7 +28,13 @@ function counterTo() {
 
   divCounterTo.textContent = `До события осталось: ${displayDays} дн. ${displayHours} : ${displayMinutes} : ${displaySeconds}`
 
-  setTimeout(counterTo, 1000)
+  let timerId = setTimeout(counterTo, 1000)
+
+  // Останавливаем таймер, если время вышло, и выводим сообщение
+  if (timeDifferenceInMilliseconds <= 0) {
+    divCounterTo.textContent = 'Событие прошло'
+    clearTimeout(timerId)
+  }
 }
 
 counterTo()
