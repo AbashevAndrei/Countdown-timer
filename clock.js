@@ -51,7 +51,7 @@ function addClock() {
     ' : ' +
     second
 
-  // Вызываем функцию clock через 1 секунду и получаем тикающие часы
+  // Вызываем callback-функцию addClock через 1 секунду и получаем тикающие часы
   setTimeout(addClock, 1000)
 }
 

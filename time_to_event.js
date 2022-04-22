@@ -1,3 +1,7 @@
+let divCounterTo = document.createElement('div')
+divCounterTo.classList.add('counterTo')
+divContainer.append(divCounterTo)
+
 function counterTo() {
   let appointedDate = new Date(2023, 0, 15)
   let now = Date.now()
@@ -19,7 +23,6 @@ function counterTo() {
   displayMinutes < 10 ? (displayMinutes = '0' + displayMinutes) : displayMinutes
   displayHours < 10 ? (displayHours = '0' + displayHours) : displayHours
 
-  let divCounterTo = document.querySelector('.counterTo')
   divCounterTo.textContent = `До события осталось: ${displayDays} дн. ${displayHours} : ${displayMinutes} : ${displaySeconds}`
 
   setTimeout(counterTo, 1000)
