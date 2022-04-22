@@ -2,8 +2,10 @@ let divCounterTo = document.createElement('div')
 divCounterTo.classList.add('counterTo')
 divContainer.append(divCounterTo)
 
+let dateTo = prompt('Укажите дату события (в формате гггг.м.д.):', '')
+
 function counterTo() {
-  let appointedDate = new Date(2023, 0, 15)
+  let appointedDate = new Date(dateTo)
   let now = Date.now()
 
   let timeDifferenceInMilliseconds = appointedDate - now
