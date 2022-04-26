@@ -3,7 +3,7 @@ let divCounterFrom = document.createElement('div')
 divCounterFrom.classList.add('counterFrom')
 divClock.after(divCounterFrom)
 
-let dateFrom = prompt('Укажите важную дату (в формате гггг.м.д.):', '')
+let dateFrom = prompt('Укажите важную дату (в формате гггг-м-д час:мин):', '')
 
 // Отображение времени, прошедшего с указанной даты
 function timeFromEvent() {
